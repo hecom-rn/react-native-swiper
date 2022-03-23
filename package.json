@@ -57,11 +57,14 @@
     "rimraf": "^2.5.4",
     "snazzy": "^7.1.0",
     "standard": "^13.0.1",
+    "react-native-gesture-handler": "^1.7.0",
     "updtr": "^2.0.0"
   },
+  "peerDependencies": {
+    "react-native-gesture-handler": "*"
+  },
   "dependencies": {
-    "prop-types": "^15.5.10",
-    "react-native-gesture-handler": "^1.7.0"
+    "prop-types": "^15.5.10"
   },
   "config": {
     "commitizen": {
