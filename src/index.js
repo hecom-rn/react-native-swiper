@@ -322,7 +322,7 @@ export default class extends Component {
     // contentOffset is not working in react 0.48.x so we need to use scrollTo
     // to emulate offset.
     if(this.state.total > 1) {
-      this.scrollView.scrollTo({ ...offset, animated: false })
+      this.scrollView?.scrollTo({ ...offset, animated: false })
     }
 	
     if (this.initialRender) {
@@ -338,23 +338,23 @@ export default class extends Component {
     const scrollView = this.scrollView
     this.loopJumpTimer = setTimeout(
       () => {
-        if (scrollView.setPageWithoutAnimation) {
+        if (scrollView?.setPageWithoutAnimation) {
           scrollView.setPageWithoutAnimation(i)
         } else {
           if (this.state.index === 0) {
-            scrollView.scrollTo(
+            scrollView?.scrollTo(
               this.props.horizontal === false
                 ? { x: 0, y: this.state.height, animated: false }
                 : { x: this.state.width, y: 0, animated: false }
             )
           } else if (this.state.index === this.state.total - 1) {
             this.props.horizontal === false
-              ? this.scrollView.scrollTo({
+              ? this.scrollView?.scrollTo({
                   x: 0,
                   y: this.state.height * this.state.total,
                   animated: false
                 })
-              : this.scrollView.scrollTo({
+              : this.scrollView?.scrollTo({
                   x: this.state.width * this.state.total,
                   y: 0,
                   animated: false
@@ -364,7 +364,7 @@ export default class extends Component {
       },
       // Important Parameter
       // ViewPager 50ms, ScrollView 300ms
-      scrollView.setPageWithoutAnimation ? 50 : 300
+      scrollView?.setPageWithoutAnimation ? 50 : 300
     )
   }
 
